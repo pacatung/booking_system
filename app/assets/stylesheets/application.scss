@@ -12,5 +12,18 @@
  *
  *= require_tree .
  *= require_self
-
  */
+
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "select2";
+@import "select2-bootstrap";
+@import 'bootstrap-datepicker';
+
+.banner-pic{
+background: image-url("salar-de-uyuni-bolivia.jpg") no-repeat center center;
+background-size:cover;
+background-attachment: fixed;
+height: 100vh;
+width: 100% ;
+}
