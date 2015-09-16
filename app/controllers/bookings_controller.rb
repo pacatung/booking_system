@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
 
   def index
     @bags = Bag.all
-    # @bags = Bag.all.order("id DESC")
+    #@bags = Bag.all.order("id DESC")
   end
 
   def new
