@@ -16,14 +16,23 @@
 
 @import "bootstrap";
 @import "bootstrap-sprockets";
-@import "select2";
-@import "select2-bootstrap";
 @import 'bootstrap-datepicker';
 
+.navbar{
+  background: rgba(245, 250, 255, 0);
+  margin-bottom: -50px;
+  border: 0px;
+}
+.navbar-header{
+  color:white;
+}
 .banner-pic{
-background: image-url("salar-de-uyuni-bolivia.jpg") no-repeat center center;
-background-size:cover;
-background-attachment: fixed;
-height: 100vh;
-width: 100% ;
+  background: image-url("L1050159.jpg") no-repeat center center;
+  /*background: image-url("salar-de-uyuni-bolivia.jpg") no-repeat center center;*/
+  /*background: image-url("136609073687.jpg") no-repeat center center;*/
+  /*background: image-url("44283_62269_935352.jpg") no-repeat center center;*/
+  background-size:cover;
+  /*background-attachment: fixed;*/
+  height: 100vh;
+  width: 100% ;
 }
