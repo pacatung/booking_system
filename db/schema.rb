@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911090044) do
+ActiveRecord::Schema.define(version: 20150918121833) do
 
   create_table "bags", force: :cascade do |t|
     t.string   "location"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 20150911090044) do
     t.boolean  "is_rented"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string   "lender"
+    t.string   "phone"
+    t.text     "identify_id"
+    t.text     "home_address"
+    t.text     "destination"
+    t.integer  "bag_id"
+    t.date     "pickup_date"
+    t.date     "return_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
