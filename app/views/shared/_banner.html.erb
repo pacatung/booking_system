@@ -3,7 +3,43 @@
   </div>
   <h1>Keep Backpacking</h1>
   <div class="select-area">
-    <form action="dd"></form>
+
+<% if false %>
+
+    <%= form_for @booking, :url => booking_path do |b| %>
+
+              <%= b.text_area :location, :class=> "form-control booking-input-area", placeholder: :"你想去哪裡？" %>
+        <%= select_tag "message[contact_ids]", grouped_options_for_select(options_for_receiver(@all_contacts)), :multiple => true, :class=> "receivers-select receivers-s2", :placeholder => "取包地點: 台北市" %>
+
+
+        <button type="button" class="btn btn-primary receiver-add" data-toggle="modal" data-
+
+        <div class='input-group date'>
+          <%= m.text_field :delivery_date, :class => 'form-control datepicker',default: DateTime.current %>
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="pull-right">
+          <%= m.submit "草稿", :class => 'btn btn-primary', :status => "draft" %>
+          <%= m.submit "完成", :class => 'btn btn-primary', :status => "final" %>
+        </div>
+
+
+      <% end %>
+
+<% end %>
+<select name="location" multiple>
+        <option value="1">台北市</option>
+        <option value="2">新北市</option>
+        <option value="3">桃園市</option>
+      </select>
+
+      <%= select_tag "message[contact_ids]", grouped_options_for_select(options_for_receiver(@all_contacts)), :multiple => true, :class=> "location-select", :placeholder => "取包地點" %>
+
+
+
+
     button_to
   </div>
 
