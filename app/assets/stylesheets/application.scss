@@ -23,6 +23,7 @@
   margin-bottom: -50px;
   border: 0px;
   position: relative;
+  z-index: 2;
 }
 .navbar-header{
   color:white;
@@ -37,7 +38,6 @@
   height: 80vh;
   width: 100% ;
   position: relative;
-  z-index: -99;
 }
 .banner-pic > .blank_space{
   padding-top:100px;
@@ -49,22 +49,32 @@
   position: relative;
 }
 .select-area{
-  border: 1px solid red;
   line-height:100px;
   background: rgba(0, 0, 0, 0.4);
   text-align: center;
-  color: white;
+  /*color: white;*/
   position: absolute;
   bottom: 0px;
   width: 100%;
-  z-index: -97;
+  z-index:1;
+  border: 1px solid red;
 }
-.input-form{
-  line-height: 0px;
+.new_booking{
+  line-height:100px;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  /*color: white;*/
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  z-index:1;
   border: 1px solid #00ff00;
 }
+.new_booking > textarea{
+  line-height:20px;
+}
 
-.try{
+.trrrryyyyy{
   border: 1px solid red;
   border: 1px solid #00ff00;
 
