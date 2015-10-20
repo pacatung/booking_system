@@ -1,0 +1,38 @@
+<% if false %>
+  <%= form_for @booking, :url => bookings_path do |b| %>
+
+        <%= select_tag "message[contact_ids]", grouped_options_for_select(options_for_receiver(@all_contacts)), :multiple => true, :class=> "receivers-select receivers-s2", :placeholder => "取包地點: 台北市" %>
+
+
+        <button type="button" class="btn btn-primary receiver-add" data-toggle="modal" data-target="#myModal" data-tooltip="hello world">＋ 新增收訊人</butto>
+
+        <div class='input-group date'>
+          <%= m.text_field :delivery_date, :class => 'form-control datepicker',default: DateTime.current %>
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="pull-right">
+          <%= m.submit "草稿", :class => 'btn btn-primary', :status => "draft" %>
+          <%= m.submit "完成", :class => 'btn btn-primary', :status => "final" %>
+        </div>
+
+
+      <% end %>
+
+
+    <%= render :partial => "new", :locals => { :message => @message } %>
+
+<% end %>
+
+<div class="input-form1">
+  <%= text_area :destination, :class=> "form-control booking-input-area", placeholder: :"你想去哪裡？" %>
+
+  <%= select_tag 'bag_id', options_for_select(@bags.collect{ |b| [b.location, b.location] }), :class=> "location-select", :placeholder => "取包地點？" %>
+
+    <input type="text" data-provide='datepicker' placeholder='取包日期'>
+    <input type="text" data-provide='datepicker' placeholder='還包日期'>
+
+
+      <button id="submit_location" type="submit" class="searchbar__submit btn btn-primary btn-large" data-reactid=".1.0.2">搜索</button>
+</div>

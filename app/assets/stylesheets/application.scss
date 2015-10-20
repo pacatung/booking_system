@@ -36,22 +36,19 @@
   /*background-attachment: fixed;*/
   height: 80vh;
   width: 100% ;
-  border: 1px solid #00ff00;
   position: relative;
   z-index: -99;
 }
 .banner-pic > .blank_space{
-  border: 1px solid red;
   padding-top:100px;
   padding-bottom: 100px;
 }
 .banner-pic > h1{
   color:white;
-  border: 1px solid #00ff00;
   text-align: center;
   position: relative;
 }
-.banner-pic > .select-area{
+.select-area{
   border: 1px solid red;
   line-height:100px;
   background: rgba(0, 0, 0, 0.4);
@@ -60,4 +57,15 @@
   position: absolute;
   bottom: 0px;
   width: 100%;
+  z-index: -97;
+}
+.input-form{
+  line-height: 0px;
+  border: 1px solid #00ff00;
+}
+
+.try{
+  border: 1px solid red;
+  border: 1px solid #00ff00;
+
 }
