@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def index
     @bags = Bag.all
     #@bags = Bag.all.order("id DESC")
+    @booking = Booking.new
   end
 
   def new
@@ -14,7 +15,6 @@ class BookingsController < ApplicationController
 
     if @booking.save
       flash[:notice] = "booking was successfully created!!"
-      @booking.create_booking_notify
       redirect_to bookings_path
     else
       redirect_to :back
