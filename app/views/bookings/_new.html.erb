@@ -1,20 +1,27 @@
-<%= form_for @booking, :url => new_booking_path do |b| %>
+<%= form_for @booking, :url => bookings_path do |b| %>
 
-    <%= b.text_field :destination, :class=> "booking-input-area", placeholder: :"你想去哪裡？" %>
+  <%= b.text_field :destination, :class=> "booking-input-area", placeholder: :"你想去哪裡？" %>
 
   <%= select_tag 'bag_id', options_for_select(@bags.collect{ |b| [b.location, b.location] }), :class=> "location-select", :placeholder => "取包地點？" %>
 
   <input type="text" data-provide='datepicker' placeholder='取包日期' name='booking[pickup_date]'>
   <input type="text" data-provide='datepicker' placeholder='還包日期' name='booking[return_date]'>
 
-  <%= b.submit "Create", :class=> "searchbar_submit btn btn-primary btn-large"%>
-  <button id="submit_location" type="submit" class="searchbar__submit btn btn-primary btn-large" data-reactid=".1.0.2">搜索</button>
-  <%= button_to '搜索', new_booking_path, :data => { :confirm => "Are you sure?" }, :class=> "searchbar_submit btn btn-primary btn-large" %>
-<% end %>
+  <%= b.submit "搜索", :class=> "searchbar_submit btn btn-primary btn-large", :status => "draft"%>
+
+  <% end %>
 
 <% if false %>
 
-  <%= text_field :destination, :class=> "form-control booking-input-area", placeholder: :"你想去哪裡？" %>
+  <%= b.text_field :destination, :class=> "form-control booking-input-area", placeholder: :"你想去哪裡？" %>
 
-  <%= b.text_field :pickup_date, :class => 'form-control datepicker',default: DateTime.current, id:"datetimepicker1"%>
+  <%= b.text_field :pickup_date, :class => 'datepicker',default: DateTime.current, id:"datetimepicker", placeholder: :"取包日期", "data-provide:" => 'datepicker' %>
+
+
+  <button id="submit_location" type="submit" class="searchbar__submit btn btn-primary btn-large" data-reactid=".1.0.2">搜索</button>
+  <%= button_to '搜索bag', :controller => 'bags', :action => 'index', :data => { :confirm => "Are you sure?" }, :class=> "searchbar_submit btn btn-primary btn-large" %>
+
+  <%= select_tag "message[contact_ids]", grouped_options_for_select(options_for_receiver(@all_contacts)), :multiple => true, :class=> "receivers-select receivers-s2", :placeholder => "收訊人: 媽媽" %>
+
+
 <% end %>
