@@ -1,13 +1,20 @@
-<%= form_for @booking, :url => bookings_path do |b| %>
+<%= form_for @booking, :url => new_booking_path do |b| %>
 
-  <%= text_area :destination, :class=> "form-control booking-input-area", placeholder: :"你想去哪裡？" %>
+    <%= b.text_field :destination, :class=> "booking-input-area", placeholder: :"你想去哪裡？" %>
 
   <%= select_tag 'bag_id', options_for_select(@bags.collect{ |b| [b.location, b.location] }), :class=> "location-select", :placeholder => "取包地點？" %>
 
-  <%= b.text_field :pickup_date, :class => 'form-control datepicker',default: DateTime.current, id:"datetimepicker1"%>
   <input type="text" data-provide='datepicker' placeholder='取包日期' name='booking[pickup_date]'>
   <input type="text" data-provide='datepicker' placeholder='還包日期' name='booking[return_date]'>
 
-
+  <%= b.submit "Create", :class=> "searchbar_submit btn btn-primary btn-large"%>
   <button id="submit_location" type="submit" class="searchbar__submit btn btn-primary btn-large" data-reactid=".1.0.2">搜索</button>
+  <%= button_to '搜索', new_booking_path, :data => { :confirm => "Are you sure?" }, :class=> "searchbar_submit btn btn-primary btn-large" %>
+<% end %>
+
+<% if false %>
+
+  <%= text_field :destination, :class=> "form-control booking-input-area", placeholder: :"你想去哪裡？" %>
+
+  <%= b.text_field :pickup_date, :class => 'form-control datepicker',default: DateTime.current, id:"datetimepicker1"%>
 <% end %>
