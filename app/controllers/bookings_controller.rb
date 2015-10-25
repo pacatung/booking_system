@@ -6,8 +6,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-  def new
+  def write_draft
     @booking = Booking.new
+  end
+  def new
+    @booking = Booking.last
+    @booking_status = "Booking.last"
   end
 
   def create
@@ -19,7 +23,7 @@ class BookingsController < ApplicationController
     end
     if @booking.save
       flash[:notice] = "booking was successfully created!!"
-      redirect_to bookings_path
+      redirect_to new_booking_path
     else
       redirect_to bags_path
     end

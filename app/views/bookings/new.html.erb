@@ -1,6 +1,19 @@
 <div class="container">
-  <br>
-  <h1>new html</h1>
+  <div class="page-header">
+      <h1>new html</h1>
+  </div>
+<br>
+  <P><%= @booking_status %> </P>
+
+  <ul>
+
+    <li>
+      <%= @booking.destination %>
+      <%= @booking.pickup_date %>
+      <%= @booking.return_date %>
+      <%= @booking.bag_id %>
+    </li>
+  </ul>
 
 
 </div>
