@@ -9,13 +9,16 @@ class BookingsController < ApplicationController
   def write_draft
     @booking = Booking.new
   end
+
   def new
     @booking = Booking.last
     @booking_status = "Booking.last"
+    @bags = Bag.find_by_location_and_is_rented("Taipei", false)
+    @bag = Bag.find_by_location("Taipei")
+
   end
 
   def create
-
     @booking = Booking.new(booking_params)
 
     if params["commit"] == "搜索"
