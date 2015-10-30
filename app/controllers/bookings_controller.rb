@@ -14,12 +14,14 @@ class BookingsController < ApplicationController
     @booking = Booking.last
     @booking_status = "Booking.last"
     @bags = Bag.find_by_location_and_is_rented("Taipei", false)
-    @bag = Bag.find_by_location("Taipei")
+    @bag = Bag.where(:location=>"Taipei")
+    # @bbb = Bag.find_by_sql( "SELECT brand FROM bags WHERE location =Taipei")
 
   end
 
   def create
     @booking = Booking.new(booking_params)
+    # @booking.return_date = "#{year(params[:return_date])}/#{month(params[dsdj])}/#{}
 
     if params["commit"] == "搜索"
       @booking.status = "draft"

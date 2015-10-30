@@ -2,21 +2,31 @@
 
   <%= b.text_field :destination, :class=> "booking-input-area", placeholder: :"你想去哪裡？" %>
 
-  <%= select_tag 'bag_id', options_for_select(@bags.collect{ |b| [b.location, b.location] }), :class=> "location-select", :placeholder => "取包地點？" %>
+  <%= select_tag 'bag_location', options_for_select(@bags.collect{ |b| [b.location, b.location] }.uniq), :class=> "location-select", :placeholder => "取包地點？" %>
 
-  <input type="text" data-provide='datepicker' placeholder='取包日期' name='booking[pickup_date]'>
+  <input type="text" data-provide='datepicker' placeholder='取包日期' name='booking[pickup_date]' default="DateTime.current">
   <input type="text" data-provide='datepicker' placeholder='還包日期' name='booking[return_date]'>
+  <%= b.text_field :pickup_date, :class => 'datepicker', id:"datetimepicker", placeholder: :"取包日期", "data-provide:" => 'datepicker' %>
+  <%= b.text_field :return_date, :class => 'datepicker', default: DateTime.current, id:"datetimepicker", placeholder: :"還包日期", "data-provide:" => 'datepicker' %>
+
 
   <%= b.submit "搜索", :class=> "searchbar_submit btn btn-primary btn-large", :status => "draft"%>
 
 <% end %>
+
+<script>
+  $('.datepicker').datepicker({
+     format: "yyyy/mm/dd"
+  });
+</script>
+
 
 <% if false %>
 
   <%= b.text_field :destination, :class=> "form-control booking-input-area", placeholder: :"你想去哪裡？" %>
 
   <%= b.text_field :pickup_date, :class => 'datepicker',default: DateTime.current, id:"datetimepicker", placeholder: :"取包日期", "data-provide:" => 'datepicker' %>
-
+<input class="datepicker" default="default" id="datetimepicker" placeholder="取包日期" data-provide:="datepicker" type="text" name="booking[pickup_date]">
 
   <button id="submit_location" type="submit" class="searchbar__submit btn btn-primary btn-large" data-reactid=".1.0.2">搜索</button>
   <%= button_to '搜索bag', :controller => 'bags', :action => 'index', :data => { :confirm => "Are you sure?" }, :class=> "searchbar_submit btn btn-primary btn-large" %>
