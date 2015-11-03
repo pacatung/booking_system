@@ -3,58 +3,19 @@
   <div class="page-header">
       <h1>new html</h1>
   </div>
-<br>
+  <br>
+  <%= button_to 'Back to index', bookings_path, :class => "btn btn-primary" %>
   <P><%= @booking_status %> </P>
 
   <ul>
     <li>
-      <%= @booking.destination %>
-      <%= @booking.pickup_date %>
-      <%= @booking.return_date %>
-      <%= @booking.bag_id %>
+      <%= @booking.destination %><br>
+      <%= @booking.pickup_date %><br>
+      <%= @booking.return_date %><br>
+      <%= @booking.get_bag_location.inspect %>
     </li>
   </ul>
-
-  <div class="table-responsive container">
-    <table class="table table-striped table-bordered table-hover">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Brand</th>
-          <th>Model</th>
-          <th>is_rented</th>
-          <th>Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @bag.each do |bag| %>
-          <tr>
-            <td><%= bag.id %></td>
-            <td><%= bag.brand %></td>
-            <td><%= bag.model %></td>
-            <td><%= bag.is_rented %></td>
-            <td><%= bag.location %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-
-</div>
-
-<% if false %>
-  <%= form_for @event, :url => { :controller => 'events', :action => 'create' } do |f| %>
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
-
-    <%= f.label :description, "Description" %>
-    <%= f.text_area :description %>
-
-    <%= f.submit "Create" %>
-  <% end %>
-
-
+   <!-- search bag -->
   <div class="table-responsive container">
     <table class="table table-striped table-bordered table-hover">
       <thead>
@@ -81,24 +42,17 @@
   </div>
 
 
+</div>
 
-  <hr>
-  <!-- search bag -->
-  <ul>
-    <li>
-      <%= @bag.brand %>
-      <%= @bag.model %>
-      <%= @bag.location %>
-      <%= @bag.is_rented %>
-    </li>
-  </ul>
-    <ul>
-    <li>
-      <%= @bags.brand %>
-      <%= @bags.model %>
-      <%= @bags.location %>
-      <%= @bags.is_rented %>
-    </li>
-  </ul>
-  <hr>
+<% if false %>
+  <%= form_for @event, :url => { :controller => 'events', :action => 'create' } do |f| %>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description %>
+
+    <%= f.submit "Create" %>
+  <% end %>
+
 <% end %>

@@ -11,17 +11,15 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.last
+    @booking = Booking.last #modify later
     @booking_status = "Booking.last"
-    @bags = Bag.find_by_location_and_is_rented("Taipei", false)
-    @bag = Bag.where(:location=>"Taipei")
-    # @bbb = Bag.find_by_sql( "SELECT brand FROM bags WHERE location =Taipei")
+    # @bags = Bag.find_by_location_and_is_rented("Taipei", false)
+    @bags = Bag.where(:location=> @booking.get_bag_location)
 
   end
 
   def create
     @booking = Booking.new(booking_params)
-    # @booking.return_date = "#{year(params[:return_date])}/#{month(params[dsdj])}/#{}
 
     if params["commit"] == "搜索"
       @booking.status = "draft"
@@ -55,6 +53,6 @@ private
   def booking_params
     #params[:message][:contact_ids] = Array(params[:message][:contact_ids]).uniq
 
-    params.require(:booking).permit(:lender, :phone, :identify_id, :home_address, :destination, :pickup_date, :return_date, :location, :bag_id)
+    params.require(:booking).permit(:lender, :phone, :identify_id, :home_address, :destination, :pickup_date, :return_date, :location, :bag_id, :get_bag_location)
   end
 end
