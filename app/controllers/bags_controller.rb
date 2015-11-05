@@ -6,7 +6,7 @@ class BagsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    @bag = Bag.new
   end
 
   def create

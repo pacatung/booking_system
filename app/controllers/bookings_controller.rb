@@ -15,7 +15,6 @@ class BookingsController < ApplicationController
     @booking_status = "Booking.last"
     # @bags = Bag.find_by_location_and_is_rented("Taipei", false)
     @bags = Bag.where(:location=> @booking.get_bag_location)
-
   end
 
   def create

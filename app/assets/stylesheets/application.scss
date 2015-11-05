@@ -76,11 +76,30 @@
 .new_booking > text{
   line-height:20px;
     border: 1px solid red;
-
 }
 
+.guest_schedule_header{
+  background-color: yellow;
+  line-height: 50px;
+  margin-bottom: 8px;
+}
+.guest_schedule_header > span{
+  padding-left: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.guest_schedule_info{
+  background-color: #f2f2f2;
+  padding:10px 8px;
+}
+.guest_schedule_info > label{
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.guest_schedule_info > p{
+  margin:0px;
+}
 .trrrryyyyy{
   border: 1px solid red;
   border: 1px solid #00ff00;
-
 }

@@ -4,55 +4,56 @@
       <h1>new html</h1>
   </div>
   <br>
-  <%= button_to 'Back to index', bookings_path, :class => "btn btn-primary" %>
-  <P><%= @booking_status %> </P>
+  <div class="col-md-9">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores harum rem expedita, hic saepe esse fugit, adipisci temporibus porro cumque modi corrupti ab natus veniam voluptatibus at consequuntur maxime libero.</p>
+    <!-- bag list -->
 
-  <ul>
-    <li>
-      <%= @booking.destination %><br>
-      <%= @booking.pickup_date %><br>
-      <%= @booking.return_date %><br>
-      <%= @booking.get_bag_location.inspect %>
-    </li>
-  </ul>
-   <!-- search bag -->
-  <div class="table-responsive container">
-    <table class="table table-striped table-bordered table-hover">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Brand</th>
-          <th>Model</th>
-          <th>is_rented</th>
-          <th>Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @bags.each do |bag| %>
-          <tr>
-            <td><%= bag.id %></td>
-            <td><%= bag.brand %></td>
-            <td><%= bag.model %></td>
-            <td><%= bag.is_rented %></td>
-            <td><%= bag.location %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
   </div>
 
-
+  <!-- guest information -->
+  <div class="col-md-3">
+    <aside class="guest_schedule_header"><span>你的行程表</span></aside>
+    <div class="guest_schedule_info">
+      <ul>
+        <li><label>取包時間</label></li>
+          <p><%= @booking.pickup_date %></p><br>
+        <li><label>還包時間</label></li>
+          <p><%= @booking.return_date %></p><br>
+        <li><label>取包和還包地點</label></li>
+          <p><%= @booking.get_bag_location %></p><br>
+        <li><label>旅遊目的地</label></li>
+          <p><%= @booking.destination %></p><br>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <% if false %>
-  <%= form_for @event, :url => { :controller => 'events', :action => 'create' } do |f| %>
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
 
-    <%= f.label :description, "Description" %>
-    <%= f.text_area :description %>
+      <div class="table-responsive container">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>is_rented</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bags.each do |bag| %>
+            <tr>
+              <td><%= bag.id %></td>
+              <td><%= bag.brand %></td>
+              <td><%= bag.model %></td>
+              <td><%= bag.is_rented %></td>
+              <td><%= bag.location %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-    <%= f.submit "Create" %>
-  <% end %>
-
+  <%= button_to 'Back to index', bookings_path, :class => "btn btn-primary" %>
 <% end %>

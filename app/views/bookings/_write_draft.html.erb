@@ -2,7 +2,7 @@
 
   <%= b.text_field :destination, :class=> "booking-input-area", placeholder: :"你想去哪裡？" %>
 
-  <%= b.select :get_bag_location, options_for_select(@bags.collect{ |b| [b.location, b.location] }.uniq), :class=> "location-select", :placeholder => "取包地點？" %>
+  <%= b.select :get_bag_location, options_for_select(@bags.collect{ |b| [b.location, b.location] }.uniq), :class=> "location-select", :placeholder => "取包和還包地點？" %>
 
   <input type="text" data-provide='datepicker' placeholder='取包日期' name='booking[pickup_date]' default="DateTime.current">
   <input type="text" data-provide='datepicker' placeholder='還包日期' name='booking[return_date]'>
