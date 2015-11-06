@@ -1,4 +1,5 @@
 class BagsController < ApplicationController
+  before_action :set_bag, :only => [ :show, :edit, :update, :destroy]
 
   def index
     @bags = Bag.all
@@ -10,30 +11,41 @@ class BagsController < ApplicationController
   end
 
   def create
-
+    @bag = Bag.new(bag_params)
+    @bag.is_rented = false
+    if @bag.save
+      flash[:notice] = "bag was successfully created!!"
+      redirect_to bags_path
+    else
+      redirect_to :back
+    end
   end
 
   def show
-
   end
 
   def edit
-
   end
 
   def update
+    @bag.update(bag_params)
 
+    redirect_to bags_path
   end
 
   def destroy
+    @bag.destroy
 
+    redirect_to bags_path
   end
 
 private
-  def booking_params
-    #params[:message][:contact_ids] = Array(params[:message][:contact_ids]).uniq
+  def bag_params
+    params.require(:bag).permit(:brand, :model, :location, :is_rented, :image)
+  end
 
-    params.require(:booking).permit(:lender, :phone, :identify_id, :home_address, :destination, :pickup_date, :return_date, :bag_id)
+  def set_bag
+    @bag = Bag.find(params[:id])
   end
 
 end

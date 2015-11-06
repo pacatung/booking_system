@@ -1,22 +1,27 @@
-<%= render 'shared/banner' %>
+<div class="banner-pic">
+  <div class="blank_space"></div>
+  <h1>Keep Backpacking</h1>
+</div>
 
-<% if false %>
-  <%= render :partial => "show", :locals => { :m => m } %>
-<% end %>
 
 <div class="container">
 
-  <div class="page-header">
-    <div class="container">
+  <div class="page-header container">
       <h1>bag index</h1>
-    </div>
   </div>
+
+  <div class="container">
+    <%= button_to '新增背包品項', new_bag_path, :method=>'get', :class=> "btn btn-primary btn-large"%>
+  </div>
+  <br>
 
   <div class="table-responsive container">
     <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr>
+          <th></th>
           <th>Id</th>
+          <th>Pic</th>
           <th>Brand</th>
           <th>Model</th>
           <th>is_rented</th>
@@ -26,7 +31,12 @@
       <tbody>
         <% @bags.each do |bag| %>
           <tr>
-            <td><%= bag.id %></td>
+            <td>
+              <%= button_to 'edit', edit_bag_path(bag), :method =>'get', :class=>'btn btn-primary' %>
+              <%= button_to 'delete', bag_path(bag), :method=>'delete', :data => { :confirm => "Are you sure?"}, class: 'inline-block btn btn-danger' %>
+            </td>
+            <td><%= link_to bag.id, bag_path(bag) %></td>
+            <td><%= image_tag bag.image.url(:thumb) %></td>
             <td><%= bag.brand %></td>
             <td><%= bag.model %></td>
             <td><%= bag.is_rented %></td>

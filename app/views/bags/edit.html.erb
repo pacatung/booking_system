@@ -1,0 +1,23 @@
+<br><br>
+<h1 class="page-header container">修改背包品項</h1>
+
+<div class="container">
+  <%= form_for @bag, :url => bag_path do |b| %>
+    <%= b.label :brand, "背包品牌" %>
+    <%= b.text_field :brand %>
+    <br>
+    <%= b.label :model, "背包型號" %>
+    <%= b.text_field :model %>
+    <br>
+    <%= b.label :location, "背包所在地" %>
+    <%= b.text_field :location %>
+    <br>
+
+    <div class="form-group">
+      上傳照片<%= b.file_field :image, class: 'inline-block' %>
+    </div>
+    <br><br>
+
+    <%= b.submit "確定修改", :class=>"btn-primary btn"%>
+  <% end %>
+</div>
