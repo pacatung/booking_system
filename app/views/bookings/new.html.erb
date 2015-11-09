@@ -1,14 +1,27 @@
 <div class="container">
   <br>
   <div class="page-header">
-      <h1>new html</h1>
+      <h1>選擇背包</h1>
   </div>
-  <br>
-  <div class="col-md-9">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores harum rem expedita, hic saepe esse fugit, adipisci temporibus porro cumque modi corrupti ab natus veniam voluptatibus at consequuntur maxime libero.</p>
-    <!-- bag list -->
-
-  </div>
+  <!-- bag list -->
+  <% @bags.each do |bag| %>
+    <div class="col-md-9 container bag_select_area">
+      <div class="bag_header">
+        <%= bag.brand+"  "+bag.model %>
+      </div>
+      <div class="col-md-4 bag_pic">
+        <%= image_tag bag.image.url(:medium) %>
+      </div>
+      <div class="col-md-8 bag_info">
+        <ul>
+          <li><%= bag.brand %></li>
+          <li><%= bag.model %></li>
+          <li><%= bag.is_rented %></li>
+          <li><%= bag.location %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
 
   <!-- guest information -->
   <div class="col-md-3">
@@ -27,33 +40,3 @@
     </div>
   </div>
 </div>
-
-<% if false %>
-
-      <div class="table-responsive container">
-      <table class="table table-striped table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>is_rented</th>
-            <th>Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @bags.each do |bag| %>
-            <tr>
-              <td><%= bag.id %></td>
-              <td><%= bag.brand %></td>
-              <td><%= bag.model %></td>
-              <td><%= bag.is_rented %></td>
-              <td><%= bag.location %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-
-  <%= button_to 'Back to index', bookings_path, :class => "btn btn-primary" %>
-<% end %>

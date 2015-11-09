@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @booking_status = "Booking.last"
     # @bags = Bag.find_by_location_and_is_rented("Taipei", false)
     @bags = Bag.where(:location=> @booking.get_bag_location)
+    # @bags = Bag.all
   end
 
   def create
@@ -52,6 +53,6 @@ private
   def booking_params
     #params[:message][:contact_ids] = Array(params[:message][:contact_ids]).uniq
 
-    params.require(:booking).permit(:lender, :phone, :identify_id, :home_address, :destination, :pickup_date, :return_date, :location, :bag_id, :get_bag_location)
+    params.require(:booking).permit(:lender, :phone, :identify_id, :home_address, :destination, :pickup_date, :return_date, :location, :bag_id, :get_bag_location, :image)
   end
 end
