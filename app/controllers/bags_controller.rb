@@ -47,5 +47,4 @@ private
   def set_bag
     @bag = Bag.find(params[:id])
   end
-
 end

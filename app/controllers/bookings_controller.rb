@@ -10,6 +10,15 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def select_bag
+    @booking = Booking.new(booking_params)
+    @booking.save
+    @booking = Booking.last
+    # @bags = Bag.find_by_location_and_is_rented("Taipei", false)
+    @bags = Bag.where(:location=> @booking.get_bag_location)
+    # @bags = Bag.all
+  end
+
   def new
     @booking = Booking.last #modify later
     @booking_status = "Booking.last"

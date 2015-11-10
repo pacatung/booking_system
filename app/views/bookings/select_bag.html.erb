@@ -22,11 +22,11 @@
           <li>出租中: <%= bag.is_rented %></li>
         </ul>
       </div>
-      <%= m.submit "草稿", :class => 'btn btn-primary', :status => "draft" %>
-      <%= m.submit "完成", :class => 'btn btn-primary', :status => "final" %>
+      <%= form_for @booking, :url => bookings_path do |b| %>
     </div>
     <% end %>
   </div>
+
   <!-- guest information -->
   <div class="col-md-3 clearfix container">
     <aside class="guest_schedule_header"><span>你的行程表</span></aside>
