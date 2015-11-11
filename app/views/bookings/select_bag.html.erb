@@ -23,12 +23,10 @@
           <li>出租中：   <%= bag.is_rented %></li>
           <br>
           <li>選擇此背包：<%= b.select :bag_id, options_for_select({ "是" => bag.id, "否" => "0" }, "0") %></li>
-<%= b.submit "下一步", :class=> "searchbar_submit btn btn-primary btn-large", :status => "select_bag"%>
+          <%= b.submit "下一步", :class=> "searchbar_submit btn btn-primary btn-large", :status => "select_bag"%>
+          <% end %>
         </ul>
       </div>
-
-
-      <% end %>
     </div>
     <% end %>
   </div>

@@ -109,11 +109,37 @@
   padding-left: 15px;
   margin-bottom: 15px;
 }
-.bag_info{
-  padding-top: px;
-
+.selected_bag_header{
+  background-color: yellow;
+  line-height: 50px;
+  margin-bottom: 8px;
 }
-
+.selected_bag_header > span{
+  padding-left: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.selected_bag_info{
+  background-color: #f2f2f2;
+  padding:10px 8px;
+}
+.selected_bag_info > label{
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.selected_bag_info > p{
+  margin:0px;
+}
+.guest_information_header{
+  background-color: yellow;
+  line-height: 50px;
+  margin-bottom: 8px;
+}
+.guest_information_header > span{
+  padding-left: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
 .trrrryyyyy{
   border: 1px solid red;
   border: 1px solid #00ff00;

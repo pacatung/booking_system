@@ -1,46 +1,8 @@
 <div class="container">
   <br>
   <div class="page-header">
-      <h1>填寫基本資訊</h1>
+      <h1>booking/new</h1>
   </div>
 
-  <!-- bag list -->
-  <div class="col-md-9 container">
-    <% @bag do |bag| %>
-    <div class="bag_select_area clearfix">
-      <div class="bag_header">
-        <%= bag.brand+"  "+bag.model %>
-      </div>
-      <div class="col-md-4 bag_pic">
-        <%= image_tag bag.image.url(:medium) %>
-      </div>
-      <div class="col-md-8 bag_info">
-        <ul>
-          <li>品牌:    <%= bag.brand %></li>
-          <li>型號:    <%= bag.model %></li>
-          <li>背包地點: <%= bag.location %></li>
-          <li>出租中: <%= bag.is_rented %></li>
-        </ul>
-      </div>
-
-    </div>
-    <% end %>
-  </div>
-  <!-- schedule -->
-  <div class="col-md-3 clearfix container">
-    <aside class="guest_schedule_header"><span>你的行程表</span></aside>
-    <div class="guest_schedule_info">
-      <ul>
-        <li><label>取包時間</label></li>
-          <p><%= @booking.pickup_date %></p><br>
-        <li><label>還包時間</label></li>
-          <p><%= @booking.return_date %></p><br>
-        <li><label>取包和還包地點</label></li>
-          <p><%= @booking.get_bag_location %></p><br>
-        <li><label>旅遊目的地</label></li>
-          <p><%= @booking.destination %></p><br>
-      </ul>
-    </div>
-  </div>
 
 </div>

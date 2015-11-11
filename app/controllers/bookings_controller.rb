@@ -18,9 +18,9 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.find(params[:id])
-    @booking.status = "user_information"
-    @bag = Booking.where(:id=> @booking.bag_id)
+    # @booking = Booking.find(params[:id])
+    # @booking.status = "user_information"
+    # @bag = Booking.where(:id=> @booking.bag_id)
   end
 
   def create
@@ -41,14 +41,17 @@ class BookingsController < ApplicationController
   end
 
   def edit
-
+    @bag = Bag.find_by_id(@booking.bag_id)
   end
 
   def update
-    @booking.update(booking_params)
-    if @booking.status = "select_bag"
-      redirect_to new_booking_path
-    elsif @booking.status = "user_information"
+    if @booking.status == "select_bag"
+      @booking.status = "user_information"
+      @booking.update(booking_params)
+      redirect_to edit_booking_path(@booking)
+    else
+      @booking.status = "show"
+      @booking.update(booking_params)
       redirect_to booking_path(@booking)
     end
   end

@@ -1,0 +1,64 @@
+<div class="container">
+  <br>
+  <div class="page-header">
+      <h1>填寫基本資訊</h1>
+  </div>
+  <!-- guest information -->
+  <div class="col-md-5 container">
+    <aside class="guest_information_header"><span>您的基本資訊</span></aside>
+    <%= form_for @booking, :url => booking_path(@booking), :method=> :patch do |b| %>
+      <div class="form-group">
+        <%= b.label "姓名" %> <br>
+        <%= b.text_field :lender, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= b.label "行動電話" %> <br>
+        <%= b.text_field :phone, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= b.label "身分證字號" %> <br>
+        <%= b.text_field :identify_id, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= b.label "住址" %> <br>
+        <%= b.text_field :home_address, :class => "form-control" %>
+      </div>
+
+      <%= b.submit "儲存", :class=> "searchbar_submit btn btn-primary btn-large pull-right", :status => "user_information"%>
+    <% end %>
+  </div>
+
+  <!-- guest schedule -->
+  <div class="col-md-3 clearfix container">
+    <aside class="guest_schedule_header"><span>您的行程表</span></aside>
+    <div class="guest_schedule_info">
+      <ul>
+        <li><label>取包時間</label></li>
+          <p><%= @booking.pickup_date %></p><br>
+        <li><label>還包時間</label></li>
+          <p><%= @booking.return_date %></p><br>
+        <li><label>取包和還包地點</label></li>
+          <p><%= @booking.get_bag_location %></p><br>
+        <li><label>旅遊目的地</label></li>
+          <p><%= @booking.destination %></p><br>
+      </ul>
+    </div>
+  </div>
+
+  <!-- selected bag -->
+  <div class="col-md-4 container">
+    <aside class="selected_bag_header"><span>您的背包</span></aside>
+    <div class="selected_bag_info">
+      <ul>
+        <%= image_tag @bag.image.url(:medium) %>
+        <li><label>品牌</label></li>
+          <p><%= @bag.brand %></p><br>
+        <li><label>型號</label></li>
+          <p><%= @bag.model %></p><br>
+        <li><label>背包所在地</label></li>
+          <p><%= @bag.location %></p><br>
+      </ul>
+    </div>
+  </div>
+
+</div>
