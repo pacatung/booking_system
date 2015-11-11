@@ -1,12 +1,12 @@
 <div class="container">
   <br>
   <div class="page-header">
-      <h1>選擇背包</h1>
+      <h1>填寫基本資訊</h1>
   </div>
 
   <!-- bag list -->
   <div class="col-md-9 container">
-    <% @bags.each do |bag| %>
+    <% @bag do |bag| %>
     <div class="bag_select_area clearfix">
       <div class="bag_header">
         <%= bag.brand+"  "+bag.model %>
@@ -22,12 +22,11 @@
           <li>出租中: <%= bag.is_rented %></li>
         </ul>
       </div>
-      <%= m.submit "草稿", :class => 'btn btn-primary', :status => "draft" %>
-      <%= m.submit "完成", :class => 'btn btn-primary', :status => "final" %>
+
     </div>
     <% end %>
   </div>
-  <!-- guest information -->
+  <!-- schedule -->
   <div class="col-md-3 clearfix container">
     <aside class="guest_schedule_header"><span>你的行程表</span></aside>
     <div class="guest_schedule_info">

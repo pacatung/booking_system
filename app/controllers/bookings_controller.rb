@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+  before_action :set_booking, :only => [ :show, :edit, :update, :destroy]
   def index
     @bags = Bag.all
     #@bags = Bag.all.order("id DESC")
@@ -11,39 +11,33 @@ class BookingsController < ApplicationController
   end
 
   def select_bag
-    @booking = Booking.new(booking_params)
-    @booking.save
     @booking = Booking.last
+
     # @bags = Bag.find_by_location_and_is_rented("Taipei", false)
-    @bags = Bag.where(:location=> @booking.get_bag_location)
-    # @bags = Bag.all
+    @bags = Bag.where(:location=> @booking.get_bag_location, :is_rented => false)
   end
 
   def new
-    @booking = Booking.last #modify later
-    @booking_status = "Booking.last"
-    # @bags = Bag.find_by_location_and_is_rented("Taipei", false)
-    @bags = Bag.where(:location=> @booking.get_bag_location)
-    # @bags = Bag.all
+    @booking = Booking.find(params[:id])
+    @booking.status = "user_information"
+    @bag = Booking.where(:id=> @booking.bag_id)
   end
 
   def create
     @booking = Booking.new(booking_params)
-
     if params["commit"] == "搜索"
-      @booking.status = "draft"
+      @booking.status = "select_bag"
     end
     if @booking.save
       flash[:notice] = "booking was successfully created!!"
-      redirect_to new_booking_path
+
+      redirect_to :action => :select_bag
     else
-      redirect_to bags_path
+      redirect_to :back
     end
   end
 
   def show
-    @booking
-    #@booking = Booking.find(params[:id])
   end
 
   def edit
@@ -51,7 +45,12 @@ class BookingsController < ApplicationController
   end
 
   def update
-
+    @booking.update(booking_params)
+    if @booking.status = "select_bag"
+      redirect_to new_booking_path
+    elsif @booking.status = "user_information"
+      redirect_to booking_path(@booking)
+    end
   end
 
   def destroy
@@ -62,6 +61,11 @@ private
   def booking_params
     #params[:message][:contact_ids] = Array(params[:message][:contact_ids]).uniq
 
-    params.require(:booking).permit(:lender, :phone, :identify_id, :home_address, :destination, :pickup_date, :return_date, :location, :bag_id, :get_bag_location, :image)
+    params.require(:booking).permit(:lender, :phone, :identify_id, :home_address, :destination, :pickup_date, :return_date, :location, :bag_id, :get_bag_location, :image, :status)
+  end
+
+  def set_booking
+   @booking = Booking.find(params[:id])
   end
 end
+

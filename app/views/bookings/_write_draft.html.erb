@@ -1,4 +1,4 @@
-<%= form_for @booking, :url => { :controller => 'bookings', :action => 'select_bag' } do |b| %>
+<%= form_for @booking, :url => bookings_path do |b| %>
 
   <%= b.text_field :destination, :class=> "booking-input-area", placeholder: :"你想去哪裡？" %>
 
@@ -9,7 +9,7 @@
   <%= b.text_field :pickup_date, :class => 'datepicker', default: DateTime.current, id:"datetimepicker", placeholder: :"取包日期", "data-provide:" => 'datepicker' %>
   <%= b.text_field :return_date, :class => 'datepicker', default: DateTime.current, id:"datetimepicker", placeholder: :"還包日期", "data-provide:" => 'datepicker' %>
 
-  <%= b.submit "搜索", :class=> "searchbar_submit btn btn-primary btn-large", :status => "draft"%>
+  <%= b.submit "搜索", :class=> "searchbar_submit btn btn-primary btn-large", :status => "write_draft"%>
 
 <% end %>
 

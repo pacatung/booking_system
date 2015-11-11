@@ -15,14 +15,20 @@
         <%= image_tag bag.image.url(:medium) %>
       </div>
       <div class="col-md-8 bag_info">
+      <%= form_for @booking, :url => booking_path(@booking) , :method => :patch do |b| %>
         <ul>
-          <li>品牌:    <%= bag.brand %></li>
-          <li>型號:    <%= bag.model %></li>
-          <li>背包地點: <%= bag.location %></li>
-          <li>出租中: <%= bag.is_rented %></li>
+          <li>品牌：    <%= bag.brand %></li>
+          <li>型號：    <%= bag.model %></li>
+          <li>背包地點： <%= bag.location %></li>
+          <li>出租中：   <%= bag.is_rented %></li>
+          <br>
+          <li>選擇此背包：<%= b.select :bag_id, options_for_select({ "是" => bag.id, "否" => "0" }, "0") %></li>
+<%= b.submit "下一步", :class=> "searchbar_submit btn btn-primary btn-large", :status => "select_bag"%>
         </ul>
       </div>
-      <%= form_for @booking, :url => bookings_path do |b| %>
+
+
+      <% end %>
     </div>
     <% end %>
   </div>
