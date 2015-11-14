@@ -60,22 +60,22 @@
   border: 1px solid red;
 }
 .datepicker{
-  padding: 0px;
+}
+.booking_draft{
+  /*line-height:100px;*/
 }
 .new_booking{
-  line-height:100px;
   background: rgba(0, 0, 0, 0.4);
   text-align: center;
   /*color: white;*/
   position: absolute;
   bottom: 0px;
   width: 100%;
-  z-index:1;
-  border: 1px solid #00ff00;
+  /*z-index:1;*/
 }
 .new_booking > text{
-  line-height:20px;
-    border: 1px solid red;
+  /*line-height:20px;*/
+  /*border: 1px solid red;*/
 }
 
 .guest_schedule_header{
