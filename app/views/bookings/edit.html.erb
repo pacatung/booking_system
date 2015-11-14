@@ -6,6 +6,10 @@
   <!-- guest information -->
   <div class="col-md-5 container">
     <aside class="guest_information_header"><span>您的基本資訊</span></aside>
+
+    <p class="waring_note">
+      貼心提醒
+    </p>
     <%= form_for @booking, :url => booking_path(@booking), :method=> :patch do |b| %>
       <div class="form-group">
         <%= b.label "姓名" %> <br>

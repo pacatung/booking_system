@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
+gem 'pg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
