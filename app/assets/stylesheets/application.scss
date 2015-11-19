@@ -62,15 +62,19 @@
 .datepicker{
 }
 .booking_draft{
-  /*line-height:100px;*/
-}
-.new_booking{
+  line-height:100px;
   background: rgba(0, 0, 0, 0.4);
-  text-align: center;
-  /*color: white;*/
   position: absolute;
   bottom: 0px;
   width: 100%;
+}
+.form_draft{
+  /*background: rgba(0, 0, 0, 0.4);*/
+  text-align: center;
+  /*color: white;*/
+/*  position: absolute;
+  bottom: 0px;
+  width: 100%;*/
   /*z-index:1;*/
 }
 .new_booking > text{
@@ -139,6 +143,20 @@
   padding-left: 15px;
   font-size: 18px;
   font-weight: bold;
+}
+.ppic{
+  background: image-url("136609073687.jpg") no-repeat;
+}
+.backpacker_pic{
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+}
+img{
+  border-radius: 5px;
+}
+.pic_bag1,.pic_bag3,.pic_bag5,.pic_bag7,.pic_bag9{
+  margin-bottom:20px;
 }
 .trrrryyyyy{
   border: 1px solid red;

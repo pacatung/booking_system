@@ -1,4 +1,5 @@
 <div class="booking_draft">
+<div class="form_draft clearfix">
 <%= form_for @booking, :url => bookings_path do |b| %>
 
   <%= b.text_field :destination, :class=> "booking-input-area", placeholder: :"你想去哪裡？" %>
@@ -11,6 +12,7 @@
   <%= b.submit "搜索", :class=> "searchbar_submit btn btn-primary btn-large", :status => "write_draft"%>
 
 <% end %>
+</div>
 </div>
 <script>
   $('.select_date').datepicker({
