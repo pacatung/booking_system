@@ -48,40 +48,25 @@
   text-align: center;
   position: relative;
 }
-.select-area{
-  line-height:100px;
-  background: rgba(0, 0, 0, 0.4);
-  text-align: center;
-  /*color: white;*/
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  z-index:1;
-  border: 1px solid red;
-}
 .datepicker{
 }
 .booking_draft{
-  /*line-height:100px;*/
+  line-height:100px;
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
   bottom: 0px;
   width: 100%;
 }
 .form_draft{
-  /*background: rgba(0, 0, 0, 0.4);*/
   text-align: center;
-  /*color: white;*/
-/*  position: absolute;
-  bottom: 0px;
-  width: 100%;*/
-  /*z-index:1;*/
+  line-height:100px;
 }
-.new_booking > text{
-  /*line-height:20px;*/
-  /*border: 1px solid red;*/
+.booking_input_area, #booking_pickup_date, #booking_return_date {
+  line-height:40px;
 }
-
+#booking_get_bag_location{
+  font-size: 70px;
+}
 .guest_schedule_header{
   background-color: yellow;
   line-height: 50px;

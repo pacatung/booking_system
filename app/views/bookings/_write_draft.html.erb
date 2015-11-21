@@ -1,19 +1,20 @@
 <div class="booking_draft">
-<div class="form_draft clearfix">
-<%= form_for @booking, :url => bookings_path do |b| %>
+  <div class="form_draft clearfix">
+  <%= form_for @booking, :url => bookings_path do |b| %>
 
-  <%= b.text_field :destination, :class=> "booking-input-area", placeholder: :"你想去哪裡？" %>
+    <%= b.text_field :destination, :class=> "booking_input_area", placeholder: :"你想去哪裡？" %>
 
-  <%= b.select :get_bag_location, options_for_select(@bags.collect{ |b| [b.location, b.location] }.uniq), :class=> "location-select", :placeholder => "取包和還包地點？" %>
+    <%= b.select :get_bag_location, options_for_select(@bags.collect{ |b| [b.location, b.location] }.uniq), :class=> "location-select", :placeholder => "取包和還包地點？" %>
 
-  <%= b.text_field :pickup_date, "data-provide" => 'datepicker', default: DateTime.current,  placeholder: :"取包日期", :class => "select_date" %>
-  <%= b.text_field :return_date, default: DateTime.current, placeholder: :"還包日期", "data-provide" => 'datepicker', :class => "select_date" %>
+    <%= b.text_field :pickup_date, "data-provide" => 'datepicker', default: DateTime.current,  placeholder: :"取包日期", :class => "select_date" %>
+    <%= b.text_field :return_date, default: DateTime.current, placeholder: :"還包日期", "data-provide" => 'datepicker', :class => "select_date" %>
 
-  <%= b.submit "搜索", :class=> "searchbar_submit btn btn-primary btn-large", :status => "write_draft"%>
+    <%= b.submit "搜索", :class=> "searchbar_submit btn btn-primary btn-large", :status => "write_draft"%>
 
-<% end %>
+  <% end %>
+  </div>
 </div>
-</div>
+
 <script>
   $('.select_date').datepicker({
      format: "yyyy/mm/dd"
