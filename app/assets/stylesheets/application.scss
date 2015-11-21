@@ -62,7 +62,7 @@
 .datepicker{
 }
 .booking_draft{
-  line-height:100px;
+  /*line-height:100px;*/
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
   bottom: 0px;
@@ -144,21 +144,67 @@
   font-size: 18px;
   font-weight: bold;
 }
-.ppic{
-  background: image-url("136609073687.jpg") no-repeat;
-}
-.backpacker_pic{
+.backpacker_pic, .user_feel, .about_plan, .youtube_video, .owner{
   padding-top: 70px;
-  padding-bottom: 70px;
-
-}
+/*  padding-bottom: 70px;
+*/}
 img{
   border-radius: 5px;
 }
 .pic_bag1,.pic_bag3,.pic_bag5,.pic_bag7,.pic_bag9{
   margin-bottom:20px;
 }
+.user_feel_title{
+  text-align: center;
+}
+.user_feel_p{
+  padding:0px 70px;
+  line-height:40px;
+  font-size:18px;
+}
+.about_plan{
+  text-align:center;
+  margin-bottom:40px;
+}
+.about_plan_title{
+  text-align: center;
+  padding-top: 30px;
+}
+.about_plan_p{
+
+}
+.youtube_media{
+  width:560px;
+  margin:0 auto;
+}
+.owner{
+  text-align: center;
+}
+.founder_pic{
+  border-radius: 99em;
+}
+.owner_pic2, .owner_pic1{
+  margin:0 auto;
+  width: 278px;
+}
+.founder_name{
+  text-align: center;
+  color:#498de5;
+}
+.founder_title{
+  text-align: center;
+  color:#8b9516;
+}
+.founder_background{
+  display: table;
+  margin: 0 auto;
+}
+.founder_background ul{
+  display: inline-block;
+}
 .trrrryyyyy{
   border: 1px solid red;
   border: 1px solid #00ff00;
+  -webkit-filter:blur(3px);
+
 }

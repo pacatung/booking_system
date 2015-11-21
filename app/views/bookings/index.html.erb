@@ -47,51 +47,69 @@
         <div class="col-md-1"></div>
       </div>
       <!--  -->
-      <div class="col-md-12">
+      <div class="col-md-12 user_feel">
         <div class="col-md-6">
-          <span>緬甸</span><br>
-          <p>在印度背包旅行時認識了男友，我們每年都會規劃旅行，會彼此牽著手揹著包一起走遍世界各地，直到背不動為止。
+          <h1 class="user_feel_title">緬甸</h1><br>
+          <p class="user_feel_p">在印度背包旅行時認識了男友，我們每年都會規劃旅行，會彼此牽著手揹著包一起走遍世界各地，直到背不動為止。
           緬甸開放兩年多，是個和善的國度，但物價已不如以往，真該趁他還未商業化之前來探險。
           每次旅遊都讓我又活過一次，讓自己更清楚自己要的是什麼，生命就該好好體驗這世界，不是嗎？</p>
         </div>
-        <div class="col-md-6 ppic">
-          ppppppppiiiiiiccccc
+        <div class="col-md-6 user_feel_pic">
+          <%= image_tag("fat_ironman.jpg", :width =>'400', :height =>'450') %>
         </div>
       </div>
-      <div class="about_plan col-md-12">
-        <span>--關於計畫--</span>
+      <div class="col-md-12">
+        <h1 class="about_plan">--關於計畫--</h1>
         <div class="col-md-5">
-          <h1>一直背下去</h1>
+          <h1 class="about_plan_title">一直背下去</h1>
         </div>
-        <div class="col-md-7">
-          <p>2010年2月，因為對人生感到迷惘，藍白拖展開為期一年的背包之旅。</p>
-          <p>2013年4月，藍白拖為了傳遞背包革命精神，決定發起「一直背下去」運動，並邀請多位旅人分享背包，借給未來的旅行者。</p>
-          <p>目前已向群眾募得105枚，預估募集200枚。</p>
-          <p>背包全面採取「免費租借」</p>
+        <div class="col-md-7 about_plan_p">
+        <ul>
+          <li><p>2010年2月，因為對人生感到迷惘，藍白拖展開為期一年的背包之旅。</p></li>
+          <li><p>2013年4月，藍白拖為了傳遞背包革命精神，決定發起「一直背下去」運動，並邀請多位旅人分享背包，借給未來的旅行者。</p></li>
+          <li><p>目前已向群眾募得105枚，預估募集200枚。</p></li>
+          <li><p>背包全面採取「免費租借」</p></li>
+        </ul>
         </div>
       </div>
-      <div class="youtube_video col-md-12">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/vdGYKIyzCXo?list=UUbXp9aPXDQoxzvkgKkLsJOw" frameborder="0" allowfullscreen></iframe>
+      <!-- youtube -->
+      <div class="col-md-12 youtube_video">
+        <div class="youtube_media center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/vdGYKIyzCXo?list=UUbXp9aPXDQoxzvkgKkLsJOw" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
-      <div class="owner col-md-12">
-        <p>--發起人--</p>
-        <div class="owner_pic1 col-md-6">
-          藍白拖
-          <ul>
+      <div class="col-md-12 oooo">
+        <h1 class="owner">--發起人--</h1>
+        <div class="col-md-6">
+          <div class="owner_pic1">
+            <%= image_tag("fat_ironman.jpg", :width =>'278', :height =>'278', :class=>'founder_pic') %>
+          </div>
+          <h1 class="founder_name">藍白拖</h1>
+          <p class="founder_title">發起人</p>
+          <div>
+          <ul class="founder_background">
             <li>遊走在叛逆與理性之間的七年級</li>
             <li>高雄第一科技大學機械系畢業</li>
             <li>曾任傳統產業業務銷售員</li>
             <li>目前專職文字創作、講師</li>
           </ul>
+          </div>
         </div>
-        <div class="owner_pic2 col-md-6"></div>
-          Chris
+        <div class="col-md-6">
+          <div class="owner_pic2">
+            <%= image_tag("fat_ironman.jpg", :width =>'278', :height =>'278', :class=>'founder_pic') %>
+          </div>
+          <h1 class="founder_name">Chris</h1>
+          <p class="founder_title">共同發起人</p>
+          <div class="founder_background">
           <ul>
             <li>因旅行而改變一生的七年級</li>
             <li>中央大學財金系畢業</li>
             <li>曾任保險業務員、旅遊節目主持人</li>
             <li>目前專注於電影電視的演出、志工服務、以及寫作</li>
           </ul>
+          </div>
+        </div>
       </div>
 
 
