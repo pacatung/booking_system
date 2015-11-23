@@ -50,6 +50,9 @@
 }
 .datepicker{
 }
+.searchbar_submit{
+  height: 46px;
+}
 .booking_draft{
   line-height:100px;
   background: rgba(0, 0, 0, 0.4);
@@ -90,6 +93,7 @@
 }
 .bag_select_area{
   margin-bottom: 20px;
+  box-shadow: 1px 1px 1px 1px #c0c0c0;
 }
 .bag_header{
   font-weight: bold;
@@ -119,6 +123,15 @@
 .selected_bag_info > p{
   margin:0px;
 }
+.warning_note{
+  padding: 15px;
+}
+.warning_note_p{
+  border:1px solid blue;
+  border-left:5px solid blue;
+  border-radius: 5px;
+  padding:10px;
+}
 .guest_information_header{
   background-color: yellow;
   line-height: 50px;
@@ -131,8 +144,7 @@
 }
 .backpacker_pic, .user_feel, .about_plan, .youtube_video, .owner{
   padding-top: 70px;
-/*  padding-bottom: 70px;
-*/}
+}
 img{
   border-radius: 5px;
 }

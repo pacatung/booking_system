@@ -7,9 +7,11 @@
   <div class="col-md-5 container">
     <aside class="guest_information_header"><span>您的基本資訊</span></aside>
 
-    <p class="waring_note">
-      貼心提醒
-    </p>
+    <div class="warning_note">
+      <p class="warning_note_p">
+        貼心提醒：記得下載 <a href="https://docs.google.com/document/d/1zNuYrPGFQUWqrDnMY-lqWYtFHMz55wWOuskE8DWv5oI/edit" target="_blank">背包借據</a> ，並於取包時，交給櫃檯人員！
+      </p>
+    </div>
     <%= form_for @booking, :url => booking_path(@booking), :method=> :patch do |b| %>
       <div class="form-group">
         <%= b.label "姓名" %> <br>
