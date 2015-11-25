@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
   def select_bag
     @booking = Booking.last
 
-    @bags = Bag.joins(:bookings).where( "bookings.pickup_date > ? OR bookings.return_date < ?",  @booking.return_date,  @booking.pickup_date ).where(:location=> @booking.get_bag_location, :is_rented => false)
+    @bags = Bag.joins(:bookings).where( "bookings.pickup_date > ? OR bookings.return_date < ?", @booking.return_date, @booking.pickup_date ).where(:location=> @booking.get_bag_location, :is_rented => false)
   end
 
   def new
