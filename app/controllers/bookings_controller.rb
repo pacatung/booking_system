@@ -13,14 +13,11 @@ class BookingsController < ApplicationController
   def select_bag
     @booking = Booking.last
 
-    # @bags = Bag.find_by_location_and_is_rented("Taipei", false)
-    @bags = Bag.where(:location=> @booking.get_bag_location, :is_rented => false)
+    @bags = Bag.joins(:bookings).where( "bookings.pickup_date > ? OR bookings.return_date < ?",  @booking.return_date,  @booking.pickup_date ).where(:location=> @booking.get_bag_location, :is_rented => false)
   end
 
   def new
-    # @booking = Booking.find(params[:id])
-    # @booking.status = "user_information"
-    # @bag = Booking.where(:id=> @booking.bag_id)
+
   end
 
   def create
@@ -62,8 +59,6 @@ class BookingsController < ApplicationController
 
 private
   def booking_params
-    #params[:message][:contact_ids] = Array(params[:message][:contact_ids]).uniq
-
     params.require(:booking).permit(:lender, :phone, :identify_id, :home_address, :destination, :pickup_date, :return_date, :location, :bag_id, :get_bag_location, :image, :status)
   end
 
