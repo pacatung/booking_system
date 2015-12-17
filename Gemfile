@@ -38,6 +38,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'capistrano-rails', :group => :development
 gem 'capistrano-passenger', :group => :development
 gem 'pg'
+gem 'omniauth-facebook', '2.0.1'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
