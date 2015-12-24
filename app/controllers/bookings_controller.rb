@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, :only => [ :show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [ :show, :edit, :update, :destroy]
+
   def index
     @bags = Bag.all
     #@bags = Bag.all.order("id DESC")

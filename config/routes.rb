@@ -20,7 +20,6 @@ Rails.application.routes.draw do
       resources :bookings
       match "bookings/select_bag" => "bookings#select_bag", :via => [:get]
 
-
   # Example resource route with options:
   #   resources :products do
   #     member do
