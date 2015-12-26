@@ -199,11 +199,34 @@ img{
 .founder_background ul{
   display: inline-block;
 }
+.sign_in_page{
+  background-color:#eeede8;
+}
 .mark_log_in{
-  text-align: center;
+  border: 1px solid red;
+  margin-left:15px;
+  margin:100px 0 40px 0;
+  text-align:center;
+}
+.facebook_login > .btn{
+  padding:10px 12px;
+  width:100%;
+}
+.btn_login_fb{
+  background-color: #3b5998;
+  color:#fff;
+  font-size:18px;
+  border-radius:4px;
+  margin-bottom: 8px;
+}
+.sign_in_form{
+  margin:0px auto;
+  border: 1px solid #00ff00;
+  max-width: 540px;
+  padding: 50px 80px;
+  background-color:white;
 }
 .trrrryyyyy{
-  border: 1px solid red;
   border: 1px solid #00ff00;
   -webkit-filter:blur(3px);
 
