@@ -1,7 +1,7 @@
-<div class="sign_in_page container">
+<div class="sign_in_page">
   <br>
   <div class="row">
-    <h2 class="mark_log_in">Keep Backpacking</h2>
+    <h1 class="mark_log_in">Keep Backpacking</h1>
   </div>
   <div class="row">
     <div class="sign_in_form">
@@ -27,10 +27,16 @@
         <% end -%>
 
         <div class="actions">
-          <%= f.submit "Log in" %>
+          <%= f.submit "使用 Email 登入" %>
         </div>
       <% end %>
       <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
+
+  <!-- Site footer -->
+<footer class="sign_in_footer">
+  <!-- <hr> -->
+  <p>&copy; Keep Backpacking 2013-2016</p>
+</footer>
