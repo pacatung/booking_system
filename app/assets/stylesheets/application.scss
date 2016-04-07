@@ -52,21 +52,59 @@
   height: 46px;
 }
 .booking_draft{
-  line-height:100px;
-  background: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
+
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 32px;
+    padding-top: 32px;
+    background: rgba(0, 0, 0, 0.39);
 }
+[type="text"]{padding: 8px 10px;}
 .form_draft{
-  text-align: center;
-  line-height:100px;
+      display: inline-block;
+      vertical-align: middle;
 }
+.booking_draft input{
+      display: block;
+    height: 44px;
+}
+.search-wrapper {
+    position: relative;
+    float: left;
+}
+
+.searchbar_location{   
+    float: left;
+    margin: 0 -1px 0 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    vertical-align: middle;
+    width: auto;
+  }
 .booking_input_area, #booking_pickup_date, #booking_return_date {
-  line-height:40px;
+
+}
+select {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-right: 0;
+  }
+.pull-left {
+    float: left;
 }
 #booking_get_bag_location{
   /*font-size: 70px;*/
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: relative;
+    padding: 8px;
+    height: 44px;
+    width: 146px;
+    float: left;
 }
 .guest_schedule_header{
   background-color: yellow;
@@ -254,4 +292,14 @@ img{
 .trrrryyyyy{
   border: 1px solid #00ff00;
   -webkit-filter:blur(3px);
+}
+@media (max-width: 767px){
+  .form_draft{
+    width:80%;
+    margin:0 auto;
+  }
+  .searchbar_location, .select_date , .searchbar_submit{width:100%;}
+  #booking_get_bag_location{width:100%;}
+
+
 }
