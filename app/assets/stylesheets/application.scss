@@ -142,6 +142,8 @@
 }
 .backpacker_pic{
   padding:120px 0px 60px;
+  background: image-url("bag_collage1.jpg") no-repeat;
+  background-size:cover;
 }
 .youtube_video, .oooo{
   padding: 40px 0 60px;
@@ -223,6 +225,8 @@ img{
 }
 .sign_in_page{
   background-color:#eeede8;
+  background: image-url("bag_collage1.jpg") no-repeat center center;
+  background-size:cover;
 }
 .mark_log_in{
   margin-left:15px;
@@ -246,6 +250,24 @@ img{
   padding: 50px 80px;
   background-color:white;
   margin-bottom: 90px;
+  border-radius: 5px;
+}
+.sign_in_line{
+  margin:40px 0;
+  display: block;
+  position: relative;
+    background-color: #dbdbdb;
+    height: 1px;
+
+}
+.sign_in_line> span{
+  top:-1150%;
+  padding:0 13px;
+  margin:0 170px;
+  display: block;
+  font-size: 16px;
+  position: relative;
+  background: white;
 }
 .sign_in_footer{
   text-align: center;

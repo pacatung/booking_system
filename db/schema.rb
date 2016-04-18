@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217083700) do
+ActiveRecord::Schema.define(version: 20160416062920) do
 
   create_table "bags", force: :cascade do |t|
     t.string   "location"
@@ -59,9 +59,15 @@ ActiveRecord::Schema.define(version: 20151217083700) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "image"
+    t.string   "fb_token"
+    t.datetime "fb_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["uid"], name: "index_users_on_uid", unique: true
 
 end
