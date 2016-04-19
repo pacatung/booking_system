@@ -76,7 +76,7 @@
     float: left;
 }
 
-.searchbar_location{   
+.searchbar_location{
     float: left;
     margin: 0 -1px 0 0;
     padding-bottom: 0;
@@ -284,19 +284,18 @@ img{
 }
 .sign_in_form{
   margin:0px auto;
-  max-width: 540px;
-  padding: 50px 80px;
+  max-width: 470px;
+  padding: 40px 25px;
   background-color:white;
   margin-bottom: 90px;
   border-radius: 5px;
 }
 .sign_in_line{
-  margin:40px 0;
+  margin:20px 0;
   display: block;
   position: relative;
-    background-color: #dbdbdb;
-    height: 1px;
-
+  background-color: #dbdbdb;
+  height: 1px;
 }
 .sign_in_line> span{
   top:-1150%;
@@ -323,5 +322,23 @@ img{
   .searchbar_location, .select_date , .searchbar_submit{width:100%;}
   #booking_get_bag_location{width:100%;}
 
+}
+.btn-facebook{
+  color:white;
+  background-color: #3b5998;
+  letter-spacing: 1px;
+}
+.btn-facebook:hover{
+  background-color: #2e4777;
+  color:white;
+}
+.fa-facebook{
+  font-size:16px;
+  margin-right: 18px;
+}
+.signupbox{
+  margin:0px auto;
+  max-width: 470px;
+  padding:0 25px;
 
 }
