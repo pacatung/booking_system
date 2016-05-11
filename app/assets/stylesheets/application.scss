@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
 @import "bootstrap";
 @import "bootstrap-sprockets";
 @import 'bootstrap-datepicker';
@@ -321,7 +320,11 @@ img{
   }
   .searchbar_location, .select_date , .searchbar_submit{width:100%;}
   #booking_get_bag_location{width:100%;}
-
+  .pic_bag1, .pic_bag3,.pic_bag5,.pic_bag7,.pic_bag9{
+    float: right;
+  }
+  .pic_bag2,.pic_bag4,.pic_bag6,.pic_bag10{margin-bottom:20px;}
+  .pic_bag8{margin-bottom: 120px;}
 }
 .btn-facebook{
   color:white;
